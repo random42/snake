@@ -1,0 +1,19 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "browserify index.js -o bin/bundle.js && npm start",
+    "start": "open index.html"
+  },
+  "keywords": [
+    "snake",
+    "html5",
+    "javascript",
+    "game",
+    "canvas"
+  ],
+  "author": "Roberto Sero",
+  "license": "ISC"
+}

@@ -17,7 +17,7 @@ class Snake {
       });
     }
     this.direction = RIGHT;
-    this.speed = 1;
+    this.speed = 8;
     this.length = 3;
   }
 
@@ -38,6 +38,17 @@ class Snake {
       y = ys-1;
     }
     this.points[0] = {x: x, y: y};
+  }
+
+  turn(str) {
+    this.speed++;
+    switch(str) {
+      case "UP": this.direction !== DOWN ? this.direction = UP :0; break;
+      case "DOWN": this.direction !== UP ? this.direction = DOWN :0; break;
+      case "RIGHT": this.direction !== LEFT ? this.direction = RIGHT:0; break;
+      case "LEFT": this.direction !== RIGHT ? this.direction = LEFT:0; break;
+      default: throw "Invalid direction"; break;
+    }
   }
 }
 

@@ -15,5 +15,8 @@
     "canvas"
   ],
   "author": "Roberto Sero",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^15.0.0"
+  }
 }

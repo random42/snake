@@ -1,5 +1,6 @@
+"use strict"
+
 const config = require('./config');
 config.setAxis();
-const start = require('./canvas');
-
-start();
+const play = require('./canvas');
+play();

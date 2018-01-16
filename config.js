@@ -1,6 +1,8 @@
+"use strict"
+
 module.exports = {
-  height : 600,
-  width : 600,
+  height : 500,
+  width : 500,
   size : 20,
   setAxis() {
     this.xs = this.width/this.size;

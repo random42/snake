@@ -1,13 +1,24 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Snake</title>
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
   </head>
   <body bgcolor=white>
-    <canvas id="canvas"></canvas>
+    <div id="main">
+      <canvas id="canvas"></canvas>
+      <div id="info">
+        <h3>Infos</h3>
+        <p>
+          Use arrow keys to move.
+        </p>
+        <p>
+          Press spacebar to pause and resume game.
+        </p>
+        <p>
+          Press Enter to play a new game.
+        </p>
+      </div>
+    </div>
     <script src="bin/bundle.js"></script>
   </body>
 </html>

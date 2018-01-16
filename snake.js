@@ -5,7 +5,6 @@ const LEFT = [-1,0];
 const config = require('./config');
 const xs = config.xs;
 const ys = config.ys;
-const assert = require('assert');
 
 class Snake {
   constructor() {
@@ -17,11 +16,17 @@ class Snake {
       });
     }
     this.direction = RIGHT;
-    this.speed = 8;
-    this.length = 3;
+    this.speed = 15;
+    this.growCounter = -1;
   }
 
   move() {
+    if (this.growCounter == 0) {
+      this.points.push({});
+      this.growCounter = -1;
+    } else if (this.growCounter > 0) {
+      this.growCounter--;
+    }
     for (let i = this.points.length-1; i >= 1;i--) {
       this.points[i] = this.points[i-1];
     }
@@ -38,10 +43,14 @@ class Snake {
       y = ys-1;
     }
     this.points[0] = {x: x, y: y};
+    for (let i = 1;i < this.points.length;i++) {
+      if (this.points[0].x == this.points[i].x && this.points[0].y == this.points[i].y) {
+        this.over = true;
+      }
+    }
   }
 
   turn(str) {
-    this.speed++;
     switch(str) {
       case "UP": this.direction !== DOWN ? this.direction = UP :0; break;
       case "DOWN": this.direction !== UP ? this.direction = DOWN :0; break;
@@ -49,6 +58,11 @@ class Snake {
       case "LEFT": this.direction !== RIGHT ? this.direction = LEFT:0; break;
       default: throw "Invalid direction"; break;
     }
+  }
+
+  eat() {
+    this.growCounter = this.points.length-1;
+    this.speed++;
   }
 }
 

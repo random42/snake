@@ -4,19 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "browserify index.js -o bin/bundle.js && npm start",
-    "start": "open index.html"
+    "start": "open-cli public/index.html",
+    "build": "webpack build ./src/index.js -o public --mode production --target web"
   },
   "keywords": [
     "snake",
     "html5",
-    "javascript",
     "game",
     "canvas"
   ],
   "author": "Roberto Sero",
-  "license": "ISC",
-  "dependencies": {
-    "browserify": "^15.0.0"
+  "license": "MIT",
+  "devDependencies": {
+    "open-cli": "^7.1.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }

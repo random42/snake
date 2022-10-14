@@ -18,7 +18,7 @@ let food = {};
 let direction = "RIGHT";
 let score = 0;
 food.img = new Image();
-food.img.src = "./food.png";
+food.img.src = "./assets/food.png";
 spawnFood();
 
 window.addEventListener("keydown",function(e) {
